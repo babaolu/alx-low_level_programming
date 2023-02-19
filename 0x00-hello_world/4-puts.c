@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 /**
- * Using puts to print out
- * a line
+ * main - Entry point of the program
+ *
+ * Return - Always zero
  */
 int main(void)
 {
