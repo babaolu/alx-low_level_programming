@@ -18,14 +18,15 @@ int main(void)
 			putchar(a);
 			putchar(b);
 
-		if (a == ('0' + 8))
-		{
-			continue;
-		}
+			if (a == ('0' + 8))
+			{
+				b++;
+				continue;
+			}
 
-		putchar(',');
-		putchar(' ');
-		b++;
+			putchar(',');
+			putchar(' ');
+			b++;
 		}
 		a++;
 	}
