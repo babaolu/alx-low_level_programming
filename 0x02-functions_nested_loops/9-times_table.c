@@ -12,7 +12,7 @@ void times_table(void)
 	int mul1;
 	int mul2;
 
-	while(a < 10)
+	while (a < 10)
 	{
 		b = 0;
 		while (b < 10)
@@ -32,7 +32,6 @@ void times_table(void)
 			if (b == 9)
 			{
 				b++;
-				_putchar('$');
 				_putchar('\n');
 				continue;
 			}
