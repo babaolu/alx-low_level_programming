@@ -10,7 +10,7 @@ int main(void)
 	char putArr[] = { '_', 'p', 'u', 't', 'c', 'h', 'a', 'r' };
 	unsigned int n = 0;
 
-	while (n < (sizeof(putArr)/sizeof(char)))
+	while (n < (sizeof(putArr) / sizeof(char)))
 	{
 		_putchar(putArr[n]);
 		n++;
