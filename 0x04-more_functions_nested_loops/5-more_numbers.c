@@ -8,9 +8,11 @@
 void more_numbers(void)
 {
 	int alph = 0;
-	int double_dig;
+	int double_num;
+	int double_dig[2];
 	char number_0;
 	char number_9 = '9';
+	int  i;
 
 	while (alph < 10)
 	{
@@ -22,14 +24,16 @@ void more_numbers(void)
 			number_0++;
 		}
 
-		double_dig = 10;
+		double_num = 10;
 
-		while (double_dig < 15)
+		while (double_num < 15)
 		{
-			_putchar('0' + (double_dig / 10));
-			_putchar('0' + (double_dig % 10));
+			double_dig[0] = double_num / 10;
+			double_dig[1] = double_num % 10;
 
-			double_dig++;
+			for (i = 0; i < 2; i++)
+				_putchar('0' + double_dig[i]);
+			double_num++;
 		}
 		_putchar('\n');
 		alph++;
