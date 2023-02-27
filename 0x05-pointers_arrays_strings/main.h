@@ -9,3 +9,11 @@ int _strlen(char *);
 void _puts(char *);
 
 void rev_string(char *);
+
+void puts2(char *);
+
+void puts_half(char *);
+
+void print_array(int *, int);
+
+char *_strcpy(char *, char *);
