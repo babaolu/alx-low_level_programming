@@ -33,13 +33,6 @@ int evalInt(char *s, char *charInt)
 	int iter = 0;
 	int val = 0;
 
-	while ((charInt[iter] >= '0') && (charInt[iter] <= '9'))
-	{
-		val *= 10;
-		val += (charInt[iter] - '0');
-		iter++;
-	}
-
 	sign_val = 0;
 		for (siter = 0; siter < (charInt - s); siter++)
 	{
@@ -47,7 +40,16 @@ int evalInt(char *s, char *charInt)
 			sign_val++;
 	}
 
-	if (sign_val % 2 == 1)
-		return (-val);
+	while ((charInt[iter] >= '0') && (charInt[iter] <= '9'))
+	{
+		val *= 10;
+
+		if (sign_val % 2 == 0)
+			val += (charInt[iter] - '0');
+		else
+			val -= (charInt[iter] - '0');
+		iter++;
+	}
+
 	return (val);
 }

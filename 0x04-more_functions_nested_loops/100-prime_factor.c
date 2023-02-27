@@ -31,7 +31,7 @@ int main(void)
 
 	for (x = num; x > 1; x--)
 		if (is_prime(x))
-			if (num / x == 0)
+			if (num % x == 0)
 			{
 				printf("%ld\n", x);
 				return (0);
