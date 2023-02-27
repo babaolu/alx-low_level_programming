@@ -17,3 +17,7 @@ void puts_half(char *);
 void print_array(int *, int);
 
 char *_strcpy(char *, char *);
+
+int evalInt(char *);
+
+int _atoi(char *);
