@@ -3,7 +3,7 @@
 
 /**
  * print_array - Print the number of elements as specified
- * @s: Array to print from
+ * @a: Array to print from
  * @n: number of elements to print
  *
  * Return: void (nothing)
@@ -17,4 +17,5 @@ void print_array(int *a, int n)
 			printf("%d, ", a[iter]);
 		else
 			printf("%d\n", a[iter]);
+	_putchar('\n');
 }
