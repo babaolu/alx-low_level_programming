@@ -13,7 +13,7 @@ int _atoi(char *s)
 	while (s[iter])
 	{
 		if ((s[iter] >= '0') && (s[iter] <= '9'))
-			return (evalInt(s + iter));
+			return (evalInt(s, s + iter));
 		iter++;
 	}
 	return (0);
@@ -22,12 +22,14 @@ int _atoi(char *s)
 
 /**
  * evalInt - Evaluate the Integer
+ * @s: Original string
  * @charInt: starting point of the Integer
  *
  * Return: Evaluated integer.
  */
-int evalInt(char *charInt)
+int evalInt(char *s, char *charInt)
 {
+	int siter, sign_val;
 	int iter = 0;
 	int val = 0;
 
@@ -38,7 +40,14 @@ int evalInt(char *charInt)
 		iter++;
 	}
 
-	if (charInt[-1] == '-')
+	sign_val = 0;
+		for (siter = 0; siter < (charInt - s); siter++)
+	{
+		if (s[siter] == '-')
+			sign_val++;
+	}
+
+	if (sign_val % 2 == 1)
 		return (-val);
 	return (val);
 }
