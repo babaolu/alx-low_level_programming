@@ -18,6 +18,6 @@ void rev_string(char *s)
 
 	for (iter = 0; iter < mir; iter++)
 	{
-		swap_int(iter, mir - (len + 1));
+		swap_int(s + iter, s + (len - 1));
 	}
 }
