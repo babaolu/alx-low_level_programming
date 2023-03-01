@@ -12,20 +12,22 @@ char *_strncpy(char *dest, char *src, int n)
 {
 	char *pt = dest;
 	int iter = 0;
+	int mark = 1;
 
 	while (n)
 	{
-		if (src[iter])
-		{
-			pt[iter] = src[iter];
-			iter++;
-			n--;
-			continue;
-		}
-
-		break;
+		if (mark)
+			if (src[iter])
+			{
+				pt[iter] = src[iter];
+				iter++;
+				n--;
+				continue;
+			}
+		mark = 0;
+		pt[iter] = '\0';
+		n--;
 	}
-	pt[iter] = '\0';
 
 	return (dest);
 }
