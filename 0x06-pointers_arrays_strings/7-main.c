@@ -8,8 +8,8 @@
  */
 int main(void)
 {
-	char str[] = "Expect the best, Prepare for the worst, Capitalize\
-on whaat comes.\n";
+	char str[] = "Expect the best, Prepare for the worst, Capitalize \
+on what comes.\n";
 
 	char *ptr;
 

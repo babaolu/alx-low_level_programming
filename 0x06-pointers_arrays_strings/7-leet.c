@@ -12,27 +12,30 @@ char *leet(char *s)
 
 	while (*pt)
 	{
-		if ((*pt == 'a') || (*pt == 'A'))
-		{
-			*pt = '4';
-		}
-		else if ((*pt == 'e') || (*pt == 'E'))
-		{
-			*pt = '3';
-		}
-		else if ((*pt == 'o') || (*pt == 'O'))
-		{
-			*pt = '0';
-		}
-		else if ((*pt == 't') || (*pt == 'T'))
-		{
-			*pt = '7';
-		}
-		else if ((*pt == 'l') || (*pt == 'L'))
-		{
-			*pt = '1';
-		}
+		exch_alp(pt, 'a', '4');
+		exch_alp(pt, 'e', '3');
+		exch_alp(pt, 'o', '0');
+		exch_alp(pt, 't', '7');
+		exch_alp(pt, 'l', '1');
+
 		pt++;
 	}
 	return (s);
+}
+
+/**
+ * exch_alp - Replace alphabet with another character
+ * @s: String position
+ * @al: Alphabet to be replaced
+ * @ch: Value to replace with
+ *
+ * Return: Void (Nothing)
+ */
+void exch_alp(char *s, char al, char ch)
+{
+	int dif = al - 'a';
+	char cal = 'A' + dif;
+
+	if ((*s == al) || (*s == cal))
+		*s = ch;
 }

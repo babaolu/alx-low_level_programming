@@ -15,3 +15,5 @@ char *string_toupper(char *);
 char *cap_string(char *);
 
 char *leet(char *);
+
+void exch_alp(char *, char, char);
