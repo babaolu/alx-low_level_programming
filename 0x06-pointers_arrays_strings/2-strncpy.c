@@ -26,6 +26,7 @@ char *_strncpy(char *dest, char *src, int n)
 			}
 		mark = 0;
 		pt[iter] = '\0';
+		iter++;
 		n--;
 	}
 
