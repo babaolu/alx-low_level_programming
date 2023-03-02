@@ -8,7 +8,7 @@
  */
 void print_number(int n)
 {
-	int len, div, cut, vsl;
+	int len, div, cut, val;
 
 	if (n < 0)
 	{
