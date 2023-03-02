@@ -8,12 +8,11 @@
  */
 void print_number(int n)
 {
-	int len, div, cut;
+	int len, div, cut, vsl;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
 	}
 	else if (n == 0)
 		_putchar ('0');
@@ -28,7 +27,10 @@ void print_number(int n)
 	while (len)
 	{
 		div = _pow(10, len - 1);
-		_putchar('0' + (n / div));
+		val = n / div;
+		if (val < 0)
+			val = -val;
+		_putchar('0' + val);
 
 		n = n % div;
 
