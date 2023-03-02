@@ -17,3 +17,9 @@ char *cap_string(char *);
 char *leet(char *);
 
 void exch_alp(char *, char, char);
+
+char *rot13(char *);
+
+void print_number(int);
+
+int _pow(int, int);
