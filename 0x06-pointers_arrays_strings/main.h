@@ -23,3 +23,7 @@ char *rot13(char *);
 void print_number(int);
 
 int _pow(int, int);
+
+int s_len(char *s);
+
+char *infinite_add(char *, char *, char *, int);
