@@ -28,6 +28,56 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	r[size_r - 1] = '\0';
 	carry = 0;
 	size_r--;
+
+	num1 = 0;
+	num2 = 0;
+	fill_func(n1, n2, &len1, &len2, r, pt, size_r, num1, num2, &carry);
+
+	if (len1 || len2 || carry)
+		return (0);
+	return (r);
+}
+
+
+/**
+ * s_len - Evaluate length
+ * @s: String to evaluate
+ *
+ * Return: Length of string s.
+ */
+int s_len(char *s)
+{
+	int len = 0;
+
+	while (s[len])
+		len++;
+
+	return (len);
+}
+
+/**
+ * fill_func - Implements adding logic
+ * @n1: String 1
+ * @n2: String 2
+ * @l1: Length of n1
+ * @l2: Length of n2
+ * @r: Buffer
+ * @pt: Point in buffer
+ * @size_r: Size of buffer
+ * @num1: Number for 1
+ * @num2: Number for 2
+ * @cry: Carry
+ *
+ * Return: Void (Nothing)
+ */
+void fill_func(char *n1, char *n2, int *l1, int *l2, char *r, char *pt,
+	       int size_r, int num1, int num2, int * cry)
+{
+
+	int len1 = *l1;
+	int len2 = *l2;
+	int carry = *cry;
+
 	while (size_r)
 	{
 		if (len1 && len2)
@@ -74,24 +124,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		}
 		size_r--;
 	}
-	if (len1 || len2 || carry)
-		return (0);
-	return (r);
-}
-
-
-/**
- * s_len - Evaluate length
- * @s: String to evaluate
- *
- * Return: Length of string s.
- */
-int s_len(char *s)
-{
-	int len = 0;
-
-	while (s[len])
-		len++;
-
-	return (len);
+	*l1 = len1;
+	*l2 = len2;
+	*cry = carry;
 }

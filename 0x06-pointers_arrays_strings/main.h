@@ -27,3 +27,6 @@ int _pow(int, int);
 int s_len(char *s);
 
 char *infinite_add(char *, char *, char *, int);
+
+void fill_func(char *, char *, int *, int *, char *, char *, int, int, int,
+	       int *);
