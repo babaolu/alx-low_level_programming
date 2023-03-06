@@ -7,7 +7,7 @@
  * @r: buffer to store the result
  * @size_r: Size of buffer
  *
- * Result: Pointer to the result
+ * Return: Pointer to the result
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
@@ -71,7 +71,7 @@ int s_len(char *s)
  * Return: Void (Nothing)
  */
 void fill_func(char *n1, char *n2, int *l1, int *l2, char *r, char *pt,
-	       int size_r, int num1, int num2, int * cry)
+	       int size_r, int num1, int num2, int *cry)
 {
 
 	int len1 = *l1;
