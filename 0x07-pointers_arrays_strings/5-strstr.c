@@ -14,6 +14,9 @@ char *_strstr(char *haystack, char *needle)
 	char *pt;
 	char *hay;
 
+	if (!(*needle))
+		return (haystack);
+
 	while (*haystack)
 	{
 		if (*haystack == *needle)
@@ -38,5 +41,5 @@ char *_strstr(char *haystack, char *needle)
 		}
 		haystack++;
 	}
-	return (0);
+	return (NULL);
 }

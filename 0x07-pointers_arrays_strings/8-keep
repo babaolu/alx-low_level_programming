@@ -1,0 +1,61 @@
+#include "main.h"
+
+/**
+ * print_diagsum - Sums the two diagonals of a matrix
+ * @a: Square matrix
+ * @size: Size of matric
+ *
+ * Return: Void (Nothing)
+ */
+void print_diagsums(int *a, int size)
+{
+	int **p = (int **) a;
+	int r;
+	int pri = 0;
+	int sec = 0;
+
+	for (r = 0; r < size; r++)
+	{
+		pri += (int) p[r][r];
+		sec += (int) p[r][size - r - 1];
+	}
+	print_num(pri);
+	_putchar(',');
+	_putchar(' ');
+	print_num(sec);
+	_putchar('\n');
+}
+
+/**
+ * print_num - Prints a number
+ * @n: Numbr to print
+ *
+ * Return: Void (Nothing)
+ */
+void print_num(int num)
+{
+	int len = 0;
+	int tens;
+	int cnum = num;
+
+	while (cnum)
+	{
+		cnum /= 10;
+		len++;
+	}
+
+
+	while (num)
+	{
+		tens = 1;
+		cnum = len;
+		while (cnum > 1)
+		{
+			tens *= 10;
+			cnum--;
+		}
+		_putchar(num / tens + '0');
+		num %= tens;
+		len--;
+	}
+}
