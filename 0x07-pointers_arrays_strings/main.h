@@ -19,3 +19,5 @@ void print_chessboard(char (*)[8]);
 void print_diagsums(int *, int);
 
 void print_num(int);
+
+void set_string(char **, char *);
