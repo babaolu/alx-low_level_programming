@@ -12,7 +12,7 @@ int _pow_recursion(int, int);
 
 int _sqrt_recursion(int);
 
-int root_rec(int, int);
+int root_rec(long int, long int);
 
 int _sqrt_recursion(int);
 

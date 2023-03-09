@@ -20,9 +20,9 @@ int _sqrt_recursion(int n)
  * Return: Natural square if exists,
  * -1 if it doesn't exist
  */
-int root_rec(int quot, int div)
+int root_rec(long int quot, long int div)
 {
-	int ret, sdiv;
+	long int ret, sdiv;
 
 	if (quot == 1)
 		return (1);
