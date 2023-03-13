@@ -12,7 +12,7 @@
 int main(int argc, char *argv[])
 {
 	int change, div;
-	long unsigned int iter;
+	unsigned long int iter;
 	int coins = 0;
 	int coinval[] = {25, 10, 5, 2, 1};
 
@@ -23,6 +23,13 @@ int main(int argc, char *argv[])
 	}
 
 	change = atoi(argv[1]);
+
+	if (change < 0)
+	{
+		printf("%d\n", 0);
+		return (0);
+	}
+
 	for (iter = 0; iter < (sizeof(coinval) / sizeof(int)); iter++)
 	{
 		div = change / coinval[iter];
