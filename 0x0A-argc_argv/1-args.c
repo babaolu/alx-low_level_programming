@@ -1,5 +1,5 @@
 #include "main.h"
-#include <unistd.h>
+#include <stdio.h>
 
 /**
  * main - Print program name
@@ -13,20 +13,7 @@ int main(int argc, __attribute__ ((unused)) char *argv[])
 	if (argc < 1)
 		return (-1);
 
-	_putchar('0' + (argc - 1));
-	_putchar('\n');
+	printf("%d\n", (argc - 1));
 
 	return (0);
-}
-
-/**
- * _putchar - writes the characer c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropritely.
- */
-int _putchar(char c)
-{
-        return (write(1, &c, 1));
 }

@@ -1,5 +1,5 @@
 #include "main.h"
-#include <unistd.h>
+#include <stdio.h>
 
 /**
  * main - Print program name
@@ -19,25 +19,8 @@ int main(int argc, char *argv[])
 	for (count = 0; count < argc; count++)
 	{
 		pname = argv[count];
-		while (*pname)
-		{
-			_putchar(*pname);
-			pname++;
-		}
-		_putchar('\n');
+		printf("%s\n", pname);
 	}
 
 	return (0);
-}
-
-/**
- * _putchar - writes the characer c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropritely.
- */
-int _putchar(char c)
-{
-        return (write(1, &c, 1));
 }
