@@ -1,5 +1,5 @@
 #include "main.h"
-#include "stdlib.h"
+#include <stdlib.h>
 #include <stdio.h>
 
 /**
@@ -17,27 +17,21 @@ int main(int argc, char *argv[])
 
 	for (count = 1; count < argc; count++)
 	{
-		add = atoi(argv[count]);
-		if (add)
-			res += add;
-		else if (*argv[count] == '0')
+		pname = argv[count];
+
+		if (*pname == '-')
+			pname++;
+		while (*pname)
 		{
-			pname = argv[count];
-			while (*pname)
+			if ((*pname < '0') || (*pname > '9'))
 			{
-				if (*pname != '0')
-				{
-					printf("Error\n");
-					return (1);
-				}
-				pname++;
+				printf("Error\n");
+				return (1);
 			}
+			pname++;
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-		}
+		add = atoi(argv[count]);
+		res += add;
 
 	}
 	printf("%d\n", res);
