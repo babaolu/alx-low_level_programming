@@ -13,4 +13,6 @@ int _strlen(char *);
 
 int **alloc_grid(int, int);
 
+char *argstostr(int, char **);
+
 #endif
