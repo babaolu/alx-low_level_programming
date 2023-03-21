@@ -4,7 +4,7 @@
 /**
  * struct dog - Dog identity
  * @name: Name of the dog.
- * @aged: Age of the dog.
+ * @age: Age of the dog.
  * @owner: Who owns the dog.
  *
  * Description: Dog and it's attributes
