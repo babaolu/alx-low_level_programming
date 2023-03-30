@@ -14,8 +14,7 @@ size_t print_list(const list_t *h)
 
 	if (!head)
 		return (0);
-	do
-	{
+	do {
 		flen = 0;
 		str = head->str;
 		if (str)
