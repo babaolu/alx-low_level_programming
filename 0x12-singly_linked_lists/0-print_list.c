@@ -23,7 +23,10 @@ size_t print_list(const list_t *h)
 				flen++;
 				str++;
 			}
-		printf("[%lu] %s\n", flen, head->str);
+		if (head->str)
+			printf("[%lu] %s\n", flen, head->str);
+		else
+			printf("[0] (nil)\n");
 		len++;
 		head = head->next;
 	} while (head);
