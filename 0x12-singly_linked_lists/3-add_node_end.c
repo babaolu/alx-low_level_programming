@@ -1,16 +1,16 @@
 #include "lists.h"
 
 /**
- * add_node - Add new node to beginning of list
+ * add_node_end - Add new node to end of list
  * @head: Pointer to list_t
  * @str: String for initialization
  *
  * Return: Address of the new element
  * NULL if failed
  */
-list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t *new;
+	list_t *new, *fhead = *head;
 	size_t len = 0;
 
 	new = malloc(sizeof(*new));
@@ -27,8 +27,16 @@ list_t *add_node(list_t **head, const char *str)
 		}
 	}
 	new->len = len;
-	new->next = *head;
-	*head = new;
+	new->next = NULL;
+
+	if (!fhead)
+		*head = new;
+	else
+	{
+		while (fhead->next)
+			fhead = fhead->next;
+		fhead->next = new;
+	}
 
 	return (new);
 }
