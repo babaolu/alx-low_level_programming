@@ -28,4 +28,6 @@ listint_t *add_nodeint_end(listint_t **, const int);
 
 void free_listint(listint_t *);
 
+void free_listint2(listint_t **);
+
 #endif /* LISTS_H */
