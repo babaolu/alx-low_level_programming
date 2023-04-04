@@ -8,9 +8,9 @@
  * Return: Address of the new element
  * NULL if failed
  */
-list_t *add_nodeint_end(list_t **head, const int n)
+listint_t *add_nodeint_end(listint_t **head, const int n)
 {
-	list_t *new, *fhead = *head;
+	listint_t *new, *fhead = *head;
 
 	new = malloc(sizeof(*new));
 	if (!new)
