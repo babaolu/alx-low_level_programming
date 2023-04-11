@@ -22,7 +22,10 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (!text_content)
+	{
+		close(fd);
 		return (1);
+	}
 
 	while (*temp_txt)
 	{
@@ -32,7 +35,11 @@ int append_text_to_file(const char *filename, char *text_content)
 
 	len = write(fd, text_content, str_len);
 	if (len < str_len)
+	{
+		close(fd);
 		return (-1);
+	}
 
+	close(fd);
 	return (1);
 }
