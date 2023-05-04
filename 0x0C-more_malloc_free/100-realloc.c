@@ -15,16 +15,17 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *newptr, *oldptr = ptr;
 	unsigned int iter;
 
-	if (new_size == old_size)
-		return (ptr);
 	if (!new_size)
 	{
 		if (ptr)
 			free(oldptr);
 		return (NULL);
 	}
+
 	if (ptr)
 	{
+		if (new_size == old_size)
+			return (ptr);
 		if (new_size < old_size)
 		{
 			free(oldptr + new_size);
