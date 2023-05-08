@@ -13,11 +13,11 @@ int main(int ac, char **av)
 {
 	int  fd_from, fd_to;
 	ssize_t rd = 1;
-	char buff[BUFF_SIZE];
+	char buff[BUFF_SIZE + 1];
 
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", av[0]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fd_from = open_r(av[1]);
