@@ -11,8 +11,6 @@ char *_strchr(char *s, char c)
 {
 	if (!s)
 		return (NULL);
-	if (!c)
-		return (NULL);
 
 	while (*s)
 	{
@@ -20,5 +18,7 @@ char *_strchr(char *s, char c)
 			return (s);
 		s++;
 	}
+	if (!c)
+		return (s);
 	return (NULL);
 }
