@@ -21,5 +21,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(new_table);
 		return (NULL);
 	}
+	memset(new_table->array, 0, sizeof(*(new_table->array)) * size);
 	return (new_table);
 }
