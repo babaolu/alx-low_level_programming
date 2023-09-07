@@ -1,0 +1,1 @@
+This project focused on implementing and understanding hash tables in their most basic form
