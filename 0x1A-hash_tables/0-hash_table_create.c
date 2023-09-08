@@ -15,12 +15,12 @@ hash_table_t *hash_table_create(unsigned long int size)
 		return (NULL);
 
 	new_table->size = size;
-	new_table->array = malloc(sizeof(*(new_table->array)) * (size + 1));
+	new_table->array = malloc(sizeof(*(new_table->array)) * size);
 	if (!(new_table->array))
 	{
 		free(new_table);
 		return (NULL);
 	}
-	memset(new_table->array, 0, sizeof(*(new_table->array)) * (size + 1));
+	memset(new_table->array, 0, sizeof(*(new_table->array)) * size);
 	return (new_table);
 }

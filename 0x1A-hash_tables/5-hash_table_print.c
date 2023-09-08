@@ -21,6 +21,8 @@ void hash_table_print(const hash_table_t *ht)
 		if (root[iter])
 			pre_list = 1;
 		print_list(root[iter]);
+		if (iter == (ht->size - 1))
+		    continue;
 		if (pre_list && root[iter + 1])
 			printf(", ");
 	}
