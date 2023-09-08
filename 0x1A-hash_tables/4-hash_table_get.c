@@ -14,6 +14,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *head = NULL;
 	hash_node_t *key_node = NULL;
 
+	if (!ht)
+		return (NULL);
 	if (!key || !key[0])
 		return (NULL);
 
