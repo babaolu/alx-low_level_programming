@@ -39,7 +39,7 @@ void print_list(const hash_node_t *h)
 
 	if (!head)
 		return;
-	while(head)
+	while (head)
 	{
 		printf("'%s': '%s'", head->key, head->value);
 
