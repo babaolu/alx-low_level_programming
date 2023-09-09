@@ -176,21 +176,21 @@ shash_node_t *add_snode(shash_table_t *ht, unsigned long int index,
 	new->next = *head;
 	*head = new;
 
-	sort_link(&(ht->shead), new);
+	sort_link(ht, new);
 
 	return (new);
 }
 
 /**
  * sort_link - Linking the nodes in an ordered list
- * @head: Head of the ordered list
+ * @ht: Hash table
  * @new: New node to add
  *
  * Return: 1 on Success, 0 on failure
  */
-int sort_link(shash_node_t **head, shash_node_t *new)
+int sort_link(shash_table_t *ht, shash_node_t *new)
 {
-	shash_node_t *h = *head;
+	shash_node_t **head = &(ht->shead), *h = *head;
 
 	if (!head)
 		return (0);
@@ -199,6 +199,7 @@ int sort_link(shash_node_t **head, shash_node_t *new)
 		new->sprev = NULL;
 		new->snext = NULL;
 		*head = new;
+		ht->stail = new;
 		return (1);
 	}
 
@@ -209,6 +210,10 @@ int sort_link(shash_node_t **head, shash_node_t *new)
 			h = h->snext;
 			continue;
 		}
+		if (*head == h)
+			*head = new;
+		else
+			(h->sprev)->snext = new;
 		new->sprev = h->sprev;
 		new->snext = h;
 		h->sprev = new;
@@ -219,8 +224,13 @@ int sort_link(shash_node_t **head, shash_node_t *new)
 		h->snext = new;
 		new->sprev = h;
 		new->snext = NULL;
+		ht->stail = new;
 		return (1);
 	}
+	if (*head == h)
+		*head = new;
+	else
+		(h->sprev)->snext = new;
 	new->sprev = h->sprev;
 	new->snext = h;
 	h->sprev = new;

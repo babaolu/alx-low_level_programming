@@ -110,7 +110,7 @@ void print_list(const hash_node_t *);
 shash_node_t *add_snode(shash_table_t *, unsigned long int, const char *,
 			const char *);
 
-int sort_link(shash_node_t **, shash_node_t *);
+int sort_link(shash_table_t *, shash_node_t *);
 
 shash_node_t *skey_search(shash_node_t *, const char *);
 
