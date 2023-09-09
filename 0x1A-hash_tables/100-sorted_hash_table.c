@@ -141,7 +141,8 @@ void shash_table_delete(shash_table_t *ht)
 
 /**
  * add_snode - Add new node to beginning of list
- * @head: Pointer to shash_node_t
+ * @ht: Hash table
+ * @index: Indexed from hashing
  * @key: Key used to hashed
  * @value: Value of the key/value pair
  *
@@ -203,10 +204,12 @@ int sort_link(shash_table_t *ht, shash_node_t *new)
 		return (1);
 	}
 
-	while (h->snext)
+	while (h)
 	{
 		if (strcmp(h->key, new->key) < 0)
 		{
+			if (!(h->snext))
+				break;
 			h = h->snext;
 			continue;
 		}
@@ -219,21 +222,10 @@ int sort_link(shash_table_t *ht, shash_node_t *new)
 		h->sprev = new;
 		return (1);
 	}
-	if (strcmp(h->key, new->key) < 0)
-	{
-		h->snext = new;
-		new->sprev = h;
-		new->snext = NULL;
-		ht->stail = new;
-		return (1);
-	}
-	if (*head == h)
-		*head = new;
-	else
-		(h->sprev)->snext = new;
-	new->sprev = h->sprev;
-	new->snext = h;
-	h->sprev = new;
+	h->snext = new;
+	new->sprev = h;
+	new->snext = NULL;
+	ht->stail = new;
 	return (1);
 }
 
@@ -279,7 +271,7 @@ void print_slist(const shash_node_t *head)
 
 /**
  * print_slist_rev - Prints all elements in a hash_node_t list in reverse
- * @head: hash_node_t list
+ * @tail: hash_node_t tail list
  *
  * Return: Void (Nothing)
  */
