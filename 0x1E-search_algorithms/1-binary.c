@@ -10,9 +10,11 @@
  */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t mid = size / 2, iter = 0;
+	size_t mid = (size - 1) / 2, iter = 0;
 
 	if (!array)
+		return (-1);
+	if (!size)
 		return (-1);
 
 	printf("Searching in array: ");
