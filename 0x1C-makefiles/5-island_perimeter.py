@@ -4,9 +4,8 @@
 
 def island_perimeter(grid):
     """ Evaluates the perimeter of a grid island """
-    found = 0
-    row = 0
-    col = 0
+    row, col, found = 0, 0, 0
+    per = 0
     for i in range(len(grid)):
         for j in range(len(grid[i])):
             if grid[i][j] == 1:
@@ -15,4 +14,10 @@ def island_perimeter(grid):
                 col = j
     if not found:
         return 0
-    irow = 0, icol = col
+    irow, icol = row, col
+    while irow == row and icol == col and not found:
+        found = 0
+        if grid[i][j - 1]:
+	    per = per + 1;
+            
+        
